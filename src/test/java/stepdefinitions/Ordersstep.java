@@ -77,13 +77,54 @@ public class Ordersstep extends Dataprovider
 	@When("^the user clicks the last (\\d+) days option$")
 	public void the_user_clicks_the_last_days_option(int arg1) throws Throwable {
 		UIhandler ordersobj = PageFactory.initElements(driver,UIhandler.class);
-		driver=ordersobj.Datepicker(driver);
+		driver=ordersobj.Datepicker7days(driver);
 	}
 
 	@Then("^the user should be able to see the results for last (\\d+) days$")
 	public void the_user_should_be_able_to_see_the_results_for_last_days(int arg1) throws Throwable {
-	    logger.info("date is selected");
+	    logger.info("last 7 days result found");
 	}
+	
+	
+	@When("^the user clicks the last quarter option$")
+	public void the_user_clicks_the_last_quarter_option() throws Throwable {
+		UIhandler ordersobj = PageFactory.initElements(driver,UIhandler.class);
+		driver=ordersobj.Datepickerlastquarter(driver);
+	  
+	}
+
+	@Then("^the user should be able to see the results for the last quarter$")
+	public void the_user_should_be_able_to_see_the_results_for_the_last_quarter() throws Throwable {
+		 logger.info("last quarter result found");
+	}
+
+	@When("^the user clicks the last (\\d+) months option$")
+	public void the_user_clicks_the_last_months_option(int arg1) throws Throwable {
+		UIhandler ordersobj = PageFactory.initElements(driver,UIhandler.class);
+		driver=ordersobj.Datepickerlast6months(driver);
+	    
+	}
+
+	@Then("^the user should be able to see the results for the (\\d+) months$")
+	public void the_user_should_be_able_to_see_the_results_for_the_months(int arg1) throws Throwable {
+		logger.info("last 6 months result found");
+	}
+	
+	@When("^the user clicks on the last (\\d+) months option$")
+	public void the_user_clicks_on_the_last_months_option(int arg1) throws Throwable {
+		UIhandler ordersobj = PageFactory.initElements(driver,UIhandler.class);
+		driver=ordersobj.Datepickerlast12months(driver);
+	    
+		
+	}
+
+	@Then("^the user should be able to see the results for the last (\\d+) months date$")
+	public void the_user_should_be_able_to_see_the_results_for_the_last_months_date(int arg1) throws Throwable {
+		logger.info("Last 12 months result found");
+	}
+
+
+	
 
 	@Given("^the user is in Global Orders$")
 	public void the_user_is_in_Global_Orders() throws Throwable {
